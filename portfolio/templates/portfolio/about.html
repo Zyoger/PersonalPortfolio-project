@@ -2,19 +2,22 @@
 {% load static %}
 {% block content %}
         <div class="row">
-            <div class="col">
-                <img src="{% static 'portfolio/my_foto.png' %}" class="rounded float-start" alt="My Foto">
+            <div class="col-3">
+                <img src="{% static 'portfolio/my_foto.png' %}" class="img-fluid img-thumbnail" alt="My Foto">
             </div>
 
-            <div class="col">
-            <h1>About me...</h1>
+            <div class="col-6">
+            <h3>About me:</h3>
             <h6>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ab aspernatur commodi consectetur cum deleniti dignissimos, distinctio, eos est iste labore laboriosam laudantium modi nemo non odit possimus quo quos voluptatem? </h6>
+            </div>
 
+            <div class="col-3">
+            <h3>My certificate:</h3>
             <div id="carouselExampleAutoplaying" class="carousel slide" data-bs-ride="carousel">
               <div class="carousel-inner">
                   {% for certificate in certificates %}
                     <div class="carousel-item active">
-                      <img src="{{ certificate.image.url }}" class="d-block w-30" alt="Foto {{ certificate.title }}">
+                      <img src="{{ certificate.image.url }}" class="img-fluid" alt="Foto {{ certificate.title }}">
                     </div>
                   {% endfor %}
               </div>
