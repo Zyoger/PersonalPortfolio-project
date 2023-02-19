@@ -1,5 +1,6 @@
 from django.shortcuts import render, get_object_or_404
 from .models import Project
+from .models import Certificate
 
 
 def home(request):
@@ -12,9 +13,6 @@ def all_projects(request):
     return render(request, "portfolio/all_projects.html", {"projects": projects})
 
 
-def link(request):
-    return render(request, "portfolio/link.html")
-
-
 def about(request):
-    return render(request, "portfolio/about.html")
+    certificates = Certificate.objects.all()
+    return render(request, "portfolio/about.html", {"certificates": certificates})

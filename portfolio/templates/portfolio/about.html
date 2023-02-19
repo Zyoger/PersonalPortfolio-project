@@ -1,12 +1,33 @@
 {% extends "portfolio/base.html" %}
-
+{% load static %}
 {% block content %}
+        <div class="row">
+            <div class="col">
+                <img src="{% static 'portfolio/my_foto.png' %}" class="rounded float-start" alt="My Foto">
+            </div>
 
-    <div class="container text-center">
-        <div style="height: 100vh">
-              <h1>All projects </h1>
-            <h1>add certificate </h1>
+            <div class="col">
+            <h1>About me...</h1>
+            <h6>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ab aspernatur commodi consectetur cum deleniti dignissimos, distinctio, eos est iste labore laboriosam laudantium modi nemo non odit possimus quo quos voluptatem? </h6>
+
+            <div id="carouselExampleAutoplaying" class="carousel slide" data-bs-ride="carousel">
+              <div class="carousel-inner">
+                  {% for certificate in certificates %}
+                    <div class="carousel-item active">
+                      <img src="{{ certificate.image.url }}" class="d-block w-30" alt="Foto {{ certificate.title }}">
+                    </div>
+                  {% endfor %}
+              </div>
+              <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleAutoplaying" data-bs-slide="prev">
+                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Previous</span>
+              </button>
+              <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleAutoplaying" data-bs-slide="next">
+                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Next</span>
+              </button>
+            </div>
+            </div>
         </div>
-    </div>
 
 {% endblock %}
