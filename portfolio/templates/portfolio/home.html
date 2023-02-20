@@ -2,25 +2,21 @@
 {% load static %}
 {% block content %}
 
-  <section class="text-center container">
-    <div class="row py-lg-5">
-      <div class="col-lg-6 col-md-8 mx-auto">
+  <div class="p-4 mb-4 bg-light rounded-3">
+    <div class="container-fluid text-center">
         <h1 class="fw-light">Hello! This is my portfolio.</h1>
         <p class="lead text-muted">Here are my projects. You can watch them.</p>
-      </div>
     </div>
-  </section>
+  </div>
 
-  <div class="card-group">
-    <div class="container">
-      <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-3">
-
+  <div class="p-4 mb-4 bg-light border rounded-3">
+      <div class="row align-items-md-stretch">
          {% for project in projects %}
-             <div class="col">
+             <div class="col-4">
               <div class="card" style="width: 22rem;">
                 <img src="{{ project.image.url }}" class="card-img-top" alt="Photo {{ project.title }}">
                 <div class="card-body">
-                    <h5>{{ project.title }}</h5>
+                  <h5>{{ project.title }}</h5>
                   <p class="card-text">{{ project.preview|safe }}</p>
                   <div class="d-flex justify-content-between align-items-center">
                     <div class="btn-group">
@@ -31,9 +27,7 @@
               </div>
             </div>
          {% endfor %}
-
       </div>
-    </div>
   </div>
 
 {% endblock %}

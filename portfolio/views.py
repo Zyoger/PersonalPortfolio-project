@@ -1,7 +1,7 @@
 from django.shortcuts import render, get_object_or_404
 from .models import Project
 from .models import Certificate
-from .models import PhotoAlbum
+from .models import InformationAboutMe
 
 
 def home(request):
@@ -16,5 +16,5 @@ def all_projects(request):
 
 def about(request):
     certificates = Certificate.objects.all()
-    photo = PhotoAlbum.objects.all()
-    return render(request, "portfolio/about.html", {"certificates": certificates, "photo": photo})
+    infos = InformationAboutMe.objects.all()
+    return render(request, "portfolio/about.html", {"certificates": certificates, "infos": infos})

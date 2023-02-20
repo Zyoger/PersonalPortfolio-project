@@ -1,36 +1,50 @@
 {% extends "portfolio/base.html" %}
 {% load static %}
 {% block content %}
-        <div class="row">
-            <div class="col-3">
-                <img src="{{ photo. }}" class="img-fluid img-thumbnail" alt="Photo {{ photo.title }}">
-            </div>
-
-            <div class="col-6">
-            <h3>About me:</h3>
-            <h6>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ab aspernatur commodi consectetur deleniti dignissimos, distinctio, eos est iste labore laboriosam laudantium modi nemo non odit possimus quo quos voluptatem? </h6>
-            </div>
-
-            <div class="col-3">
-            <h3>My certificate:</h3>
-            <div id="carouselExampleAutoplaying" class="carousel slide" data-bs-ride="carousel">
-              <div class="carousel-inner">
-                  {% for certificate in certificates %}
-                    <div class="carousel-item active">
-                      <img src="{{ certificate.image.url }}" class="img-fluid" alt="Photo {{ certificate.title }}">
-                    </div>
-                  {% endfor %}
-              </div>
-              <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleAutoplaying" data-bs-slide="prev">
-                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                <span class="visually-hidden">Previous</span>
-              </button>
-              <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleAutoplaying" data-bs-slide="next">
-                <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                <span class="visually-hidden">Next</span>
-              </button>
-            </div>
+    {% for info in infos %}
+        <div class="p-4 mb-4 bg-light rounded-3">
+            <div class="row container-fluid">
+                <div class="col-3">
+                    <img src="{{ info.my_photo.url }}" class="img-thumbnail img-fluid" alt="Photo {{ info.my_nick }}">
+                </div>
+                <div class="col-9">
+                    <h3>About me:</h3>
+                    <p>{{ info.description_main }}</p>
+                </div>
             </div>
         </div>
-
+        <div class="row align-items-md-stretch">
+          <div class="col-md-4">
+            <div class="h-100 p-4 text-bg-dark rounded-3">
+                <h4>My certificate:</h4>
+                <div id="carouselExampleAutoplaying" class="carousel slide" data-bs-ride="carousel">
+                  <div class="carousel-inner">
+                      {% for certificate in certificates %}
+                        <div class="carousel-item active">
+                          <img src="{{ certificate.image.url }}" class="img-fluid" alt="Photo {{ certificate.title }}">
+                        </div>
+                      {% endfor %}
+                  </div>
+                  <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleAutoplaying" data-bs-slide="prev">
+                    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                    <span class="visually-hidden">Previous</span>
+                  </button>
+                  <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleAutoplaying" data-bs-slide="next">
+                    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                    <span class="visually-hidden">Next</span>
+                  </button>
+                </div>
+            </div>
+          </div>
+          <div class="col-md-8">
+            <div class="h-100 p-4 bg-light border rounded-3">
+              <h4>My contacts:</h4>
+              <p>Tel: {{ info.my_phone_number }}</p>
+              <a href="{{ info.link_telegram }}">Telegram</a>
+              <p>Telegram: @Zyoger</p>
+              <button class="btn btn-outline-secondary" type="button">My resume</button>
+            </div>
+          </div>
+        </div>
+    {% endfor %}
 {% endblock %}

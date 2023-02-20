@@ -23,9 +23,18 @@ class Certificate(models.Model):
         return self.title
 
 
-class PhotoAlbum(models.Model):
-    title = models.CharField(max_length=50)
-    image = models.ImageField(upload_to="portfolio/images/my photo/")
+class InformationAboutMe(models.Model):
+    my_nick = models.CharField(max_length=50)
+    my_photo = models.ImageField(upload_to="portfolio/info/")
+    description_main = models.TextField()
+    description_second = models.TextField(blank=True)
+    my_resume = models.FileField(upload_to="portfolio/info/")
+    my_phone_number = models.CharField(max_length=20)
+    link_telegram = models.URLField(blank=True)
+    link_instagram = models.URLField(blank=True)
+    link_github = models.URLField(blank=True)
+    link_vk = models.URLField(blank=True)
+    link_watsapp = models.URLField(blank=True)
 
     def __str__(self):
-        return self.title
+        return self.my_nick
