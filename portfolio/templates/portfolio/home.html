@@ -18,7 +18,7 @@
          {% for project in projects %}
              <div class="col">
               <div class="card" style="width: 22rem;">
-                <img src="{{ project.image.url }}" class="card-img-top" alt="{{ project.title }}">
+                <img src="{{ project.image.url }}" class="card-img-top" alt="Photo {{ project.title }}">
                 <div class="card-body">
                     <h5>{{ project.title }}</h5>
                   <p class="card-text">{{ project.preview|safe }}</p>

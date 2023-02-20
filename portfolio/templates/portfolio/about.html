@@ -3,12 +3,12 @@
 {% block content %}
         <div class="row">
             <div class="col-3">
-                <img src="{% static 'portfolio/my_foto.png' %}" class="img-fluid img-thumbnail" alt="My Foto">
+                <img src="{{ photo. }}" class="img-fluid img-thumbnail" alt="Photo {{ photo.title }}">
             </div>
 
             <div class="col-6">
             <h3>About me:</h3>
-            <h6>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ab aspernatur commodi consectetur cum deleniti dignissimos, distinctio, eos est iste labore laboriosam laudantium modi nemo non odit possimus quo quos voluptatem? </h6>
+            <h6>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ab aspernatur commodi consectetur deleniti dignissimos, distinctio, eos est iste labore laboriosam laudantium modi nemo non odit possimus quo quos voluptatem? </h6>
             </div>
 
             <div class="col-3">
@@ -17,7 +17,7 @@
               <div class="carousel-inner">
                   {% for certificate in certificates %}
                     <div class="carousel-item active">
-                      <img src="{{ certificate.image.url }}" class="img-fluid" alt="Foto {{ certificate.title }}">
+                      <img src="{{ certificate.image.url }}" class="img-fluid" alt="Photo {{ certificate.title }}">
                     </div>
                   {% endfor %}
               </div>

@@ -21,3 +21,11 @@ class Certificate(models.Model):
 
     def __str__(self):
         return self.title
+
+
+class PhotoAlbum(models.Model):
+    title = models.CharField(max_length=50)
+    image = models.ImageField(upload_to="portfolio/images/my photo/")
+
+    def __str__(self):
+        return self.title
