@@ -9,25 +9,27 @@
     </div>
   </div>
 
-  <div class="p-4 mb-4 bg-light border rounded-3">
-      <div class="row align-items-md-stretch">
-         {% for project in projects %}
-             <div class="col-4">
-              <div class="card" style="width: 22rem;">
-                <img src="{{ project.image.url }}" class="card-img-top" alt="Photo {{ project.title }}">
-                <div class="card-body">
-                  <h5>{{ project.title }}</h5>
-                  <p class="card-text">{{ project.preview|safe }}</p>
-                  <div class="d-flex justify-content-between align-items-center">
-                    <div class="btn-group">
-                        <a href="{{ project.url }}" class="btn btn-dark">More...</a>
-                    </div>
-                  </div>
+  <div class="album py-5 bg-light">
+    <div class="container">
+      <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-3">
+          {% for project in projects %}
+            <div class="col">
+          <div class="card shadow-sm">
+              <img src="{{ project.image.url }}" class="bd-placeholder-img card-img-top" alt="Photo {{ project.title }}">
+            <div class="card-body">
+                <h5>{{ project.title }}</h5>
+              <p class="card-text">{{ project.preview|safe }}</p>
+              <div class="d-flex justify-content-between align-items-center">
+                <div class="btn-group">
+                    <a href="{{ project.url }}" class="btn btn-dark">More...</a>
                 </div>
               </div>
             </div>
-         {% endfor %}
+          </div>
+        </div>
+          {% endfor %}
       </div>
+    </div>
   </div>
 
 {% endblock %}
