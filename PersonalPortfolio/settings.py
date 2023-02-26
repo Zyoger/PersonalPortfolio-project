@@ -20,12 +20,12 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 # See https://docs.djangoproject.com/en/4.1/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = 'django-insecure-%8oksd89$t$42mm25=*_uv-c%fp)x1343_m5ghno8ers_g&e(f'
+SECRET_KEY = 'django-insecure-%484oksd89$t$d42mm25=f*_uv-dc%fpm)x1343_m5g5hnvo8ers_g&5e(f'
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ["zyoger.ru", "194.34.133.202", "localhost"]
 
 
 # Application definition
@@ -78,8 +78,12 @@ WSGI_APPLICATION = 'PersonalPortfolio.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': BASE_DIR / 'db.sqlite3',
+        'ENGINE': 'django.db.backends.postgresql',
+        'NAME': '',
+        'USER': '',
+        'PASSWORD': '',
+        'HOST': '',
+        'PORT': '',
     }
 }
 
