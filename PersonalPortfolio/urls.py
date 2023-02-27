@@ -28,5 +28,4 @@ urlpatterns = [
     path('blog/', include('blog.urls')),
     path('project/<int:project_pk>', views.view_project, name="view project")
 ]
-
 urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
