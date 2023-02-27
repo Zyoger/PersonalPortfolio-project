@@ -5,7 +5,7 @@ class Project(models.Model):
     title = models.CharField(max_length=100)
     preview = models.CharField(max_length=300)
     description = models.TextField()
-    image = models.ImageField(upload_to="portfolio/image/project/")
+    image = models.ImageField()
     url = models.URLField(blank=True)
 
     def __str__(self):
@@ -15,8 +15,8 @@ class Project(models.Model):
 class Certificate(models.Model):
     title = models.CharField(max_length=50)
     description = models.TextField(max_length=500)
-    image = models.ImageField(upload_to="portfolio/images/certificates/")
-    file = models.FileField(upload_to="portfolio/files/")
+    image = models.ImageField()
+    file = models.FileField()
     url = models.URLField(blank=True)
 
     def __str__(self):
@@ -25,10 +25,10 @@ class Certificate(models.Model):
 
 class InformationAboutMe(models.Model):
     my_nick = models.CharField(max_length=50)
-    my_photo = models.ImageField(upload_to="portfolio/images/")
+    my_photo = models.ImageField()
     description_main = models.TextField()
     description_second = models.TextField(blank=True)
-    my_resume = models.FileField(upload_to="portfolio/files/")
+    my_resume = models.FileField()
     my_phone_number = models.CharField(max_length=20)
     link_telegram = models.URLField(blank=True)
     link_instagram = models.URLField(blank=True)
