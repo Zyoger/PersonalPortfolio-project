@@ -16,8 +16,8 @@ def all_projects(request):
 
 def about(request):
     certificates = Certificate.objects.all()[1:]
-    first_certificate = Certificate.objects.get(pk=1)
-    info = InformationAboutMe.objects.get(pk=1)
+    first_certificate = Certificate.objects.all()[:1]
+    info = InformationAboutMe.objects.all()[:1]
     return render(request, "portfolio/about.html", {"certificates": certificates, "info": info, "first_certificate":first_certificate})
 
 
