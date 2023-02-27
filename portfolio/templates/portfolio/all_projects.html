@@ -20,8 +20,8 @@
             <div class="col-md-8">
               <div class="card-body">
                   <h5 class="card-title">{{ project.title }}</h5>
-                  <p class="card-text">{{ project.description|safe }}</p>
-                  <a href="{{ project.url }}" class="btn btn-dark">More...</a>
+                  <p class="card-text">{{ project.preview|safe }}</p>
+                  <a href="{% url 'view project' project.id %}" class="btn btn-dark">More...</a>
               </div>
             </div>
           </div>

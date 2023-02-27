@@ -21,7 +21,7 @@
               <p class="card-text">{{ project.preview|safe }}</p>
               <div class="d-flex justify-content-between align-items-center">
                 <div class="btn-group">
-                    <a href="{{ project.url }}" class="btn btn-dark">More...</a>
+                    <a href="{% url 'view project' project.id %}" class="btn btn-dark">More...</a>
                 </div>
               </div>
             </div>

@@ -15,6 +15,12 @@ def all_projects(request):
 
 
 def about(request):
-    certificates = Certificate.objects.all()
-    infos = InformationAboutMe.objects.all()
-    return render(request, "portfolio/about.html", {"certificates": certificates, "infos": infos})
+    certificates = Certificate.objects.all()[1:]
+    first_certificate = Certificate.objects.get(pk=1)
+    info = InformationAboutMe.objects.get(pk=1)
+    return render(request, "portfolio/about.html", {"certificates": certificates, "info": info, "first_certificate":first_certificate})
+
+
+def view_project(request, project_pk):
+    project = get_object_or_404(Project, pk=project_pk)
+    return render(request, "portfolio/project.html", {"project": project})
