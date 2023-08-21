@@ -25,7 +25,7 @@ SECRET_KEY = 'django-insecure-'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = False
 
-ALLOWED_HOSTS = ["zyoger.ru", "www.zyoger.ru", "localhost", "zyoger.online", "www.zyoger.online", "127.0.0.1"]
+ALLOWED_HOSTS = ["127.0.0.1", "192.168.0.138"]
 
 
 # Application definition
@@ -79,11 +79,11 @@ WSGI_APPLICATION = 'PersonalPortfolio.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql',
-        'NAME': 'mydb',
-        'USER': '',
-        'PASSWORD': '',
-        'HOST': '',
-        'PORT': '',
+        'NAME': 'postgres',
+        'USER': 'postgres',
+        'PASSWORD': '12345',
+        'HOST': 'localhost',
+        'PORT': '5432',
     }
 }
 
@@ -124,9 +124,9 @@ USE_TZ = True
 
 STATIC_URL = '/static/'
 
-STATICFILES_DIRS = [
-    os.path.join(BASE_DIR, 'web/static'),
-]
+#STATICFILES_DIRS = [
+#    os.path.join(BASE_DIR, 'static'),
+#]
 
 STATIC_ROOT = os.path.join(BASE_DIR, 'static')
 
